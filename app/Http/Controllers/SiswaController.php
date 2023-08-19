@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -109,5 +111,26 @@ class SiswaController extends Controller
         $siswa = siswa::findOrFail($id);
         $siswa->delete();
         return redirect()->route('siswa.index');
+    }
+
+    // Controller cetak dan cari data
+    public function cetak()
+    {
+        $siswa = Siswa::all();
+
+        $pdf = PDF::loadview('siswa.cetak', ['siswa' => $siswa]);
+        return $pdf->download('Data.pdf');
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $siswa = Siswa::where('nama', 'like', "%" . $keyword . "%")->paginate(10);
+
+
+        // mengirim data pegawai ke view index
+        return view('siswa.index', compact('siswa'));
     }
 }
