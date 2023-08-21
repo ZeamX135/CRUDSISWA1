@@ -121,6 +121,15 @@ class SiswaController extends Controller
         $pdf = PDF::loadview('siswa.cetak', ['siswa' => $siswa]);
         return $pdf->download('Data.pdf');
     }
+    public function cetakg()
+    {
+        $siswa = Siswa::all();
+
+        $pdf = PDF::loadview('siswag.cetak', ['siswa' => $siswa]);
+        return $pdf->download('Data.pdf');
+    }
+
+
 
     public function cari(Request $request)
     {
@@ -132,5 +141,27 @@ class SiswaController extends Controller
 
         // mengirim data pegawai ke view index
         return view('siswa.index', compact('siswa'));
+    }
+    public function caris(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $siswa = Siswa::where('nama', 'like', "%" . $keyword . "%")->paginate(10);
+
+
+        // mengirim data pegawai ke view index
+        return view('siswas.index', compact('siswa'));
+    }
+    public function carig(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $siswa = Siswa::where('nama', 'like', "%" . $keyword . "%")->paginate(10);
+
+
+        // mengirim data pegawai ke view index
+        return view('siswag.index', compact('siswa'));
     }
 }

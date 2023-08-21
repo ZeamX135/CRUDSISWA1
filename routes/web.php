@@ -17,7 +17,7 @@ use App\Http\Controllers\SiswaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -68,5 +68,8 @@ Route::get('/siswag', [App\Http\Controllers\SiswaController::class,'siswaGuru'])
 // Membuat router mencetak data
 
 Route::get('/cetak', [SiswaController::class, 'cetak'])->name('siswa.cetak');
+Route::get('/cetak', [SiswaController::class, 'cetakg'])->name('siswag.cetak');
 
 Route::get('/search', [SiswaController::class, 'cari'])->name('siswa.cari');
+Route::get('/searchs', [SiswaController::class, 'caris'])->name('siswas.cari');
+Route::get('/searchg', [SiswaController::class, 'carig'])->name('siswag.cari');

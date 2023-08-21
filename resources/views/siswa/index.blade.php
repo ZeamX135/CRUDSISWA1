@@ -5,17 +5,17 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header" >
                     Data siswa
-                    <a href="{{route('siswa.create')}}" class="btn btn-sm btn-outline-primary float-right">Tambah Data</a>
+                    <a href="{{route('siswa.create')}}" class="btn btn-sm btn-outline-primary float-right" style="float: right">Tambah Data</a>
 
                     <a href="{{ route('siswa.cetak') }}"
-                        class="btn btn-sm btn-outline-primary float-right mx-3 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg bg-indigo-500 text-gray-100 rounded-full w-1/6 "
-                        target="_blank">Cetak Data</a>
+                    class="btn btn-sm btn-outline-primary float-right mx-3 font-semibold font-display focus:outline-none hover:bg-indigo-600 bg-indigo-500 text-gray-100 rounded-full w-1/6 "
+                    target="_blank" style="float: right">Cetak Data</a>
 
                 </div>
-                <div class="container-fluid d-grid">
-                    <form action="{{ route('siswa.cari') }}" method="GET"
+                <div class="container-fluid d-grid" style="heigth: 30px">
+                    <form action="{{ route('siswa.cari') }}" method="GET" style="position: absolute; right: 10px;"
                         class="mt-3 mx-auto max-w-xl py-2 px-6 rounded-full bg-white border flex focus-within:border-gray-300 ">
                         <input type="text" name="cari" placeholder="Cari siswa" value="{{ old('cari') }}"
                             class="bg-transparent w-full focus:outline-none pr-4 font-semibold border-0 focus:ring-0 px-0 py-0">
@@ -24,7 +24,7 @@
                     </form>
 
 
-                <div class="car-body">
+                <div class="car-body" style="padding-top: 70px">
                     <div class="table-responsive">
                         <table class="table" id="siswa">
                             <thead>
