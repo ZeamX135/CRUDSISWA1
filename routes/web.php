@@ -68,7 +68,7 @@ Route::get('/siswag', [App\Http\Controllers\SiswaController::class,'siswaGuru'])
 // Membuat router mencetak data
 
 Route::get('/cetak', [SiswaController::class, 'cetak'])->name('siswa.cetak');
-Route::get('/cetak', [SiswaController::class, 'cetakg'])->name('siswag.cetak');
+Route::get('/cetakg', [SiswaController::class, 'cetakg'])->name('siswag.cetak');
 
 Route::get('/search', [SiswaController::class, 'cari'])->name('siswa.cari');
 Route::get('/searchs', [SiswaController::class, 'caris'])->name('siswas.cari');
