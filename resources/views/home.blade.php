@@ -12,9 +12,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 25px 10px;">{{ __('Dashboard') }}</div>
 
-                <div class="card-header">
+                <div class="card-header bg-primary text-white" style="padding: 20px 10px;">
                     Total Data Siswa  :
                     {{ DB::table('siswas')->count() }}
                     <div>
