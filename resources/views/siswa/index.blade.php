@@ -11,7 +11,7 @@
 
                     <a href="{{ route('siswa.cetak') }}"
                     class="btn btn-sm btn-outline-primary float-right mx-3 font-semibold font-display focus:outline-none hover:bg-indigo-600 bg-indigo-500 text-gray-100 rounded-full w-1/6 "
-                    target="_blank" style="float: right">Cetak Data</a>
+                    target="_blank" style="float: right"><i class="bi bi-file-earmark-pdf-fill"></i></a>
 
                 </div>
                 <div class="container-fluid d-grid" style="heigth: 30px">

@@ -43,7 +43,7 @@
 <script>
 	var ctx = document.getElementById("myChart").getContext('2d');
 	var myChart = new Chart(ctx, {
-		type: 'pie',
+		type: 'doughnut',
 		data: {
 			labels: ["Perempuan", "Laki-Laki"],
 			datasets: [{
